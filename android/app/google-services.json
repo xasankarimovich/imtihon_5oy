@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "996921360023",
+    "firebase_url": "https://imtihon-4oy-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "imtihon-4oy",
+    "storage_bucket": "imtihon-4oy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996921360023:android:595e1b69bbda08e31bf3d2",
+        "android_client_info": {
+          "package_name": "com.example.exam_5_oy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDGhMCB5gVvw70H12xiYoMs9B60IFwP8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996921360023:android:22fd81c866c798af1bf3d2",
+        "android_client_info": {
+          "package_name": "com.example.imtihon4_oy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDGhMCB5gVvw70H12xiYoMs9B60IFwP8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996921360023:android:b36dc5fd082c46681bf3d2",
+        "android_client_info": {
+          "package_name": "com.example.summarize_it"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDGhMCB5gVvw70H12xiYoMs9B60IFwP8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
