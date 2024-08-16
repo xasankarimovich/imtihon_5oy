@@ -1,7 +1,7 @@
-import 'package:buksam_flutter_practicum/data/models/forum_status/form_status.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 
-// enum AuthStatus { initial, loading, authenticated, error, loggedOut }
+import '../../data/model/forum_status/form_status.dart';
 
 class AuthState {
   final ForumStatus status;

@@ -1,22 +1,21 @@
-import 'package:buksam_flutter_practicum/data/models/forum_status/form_status.dart';
-import 'package:buksam_flutter_practicum/data/models/user/user_model.dart';
-import 'package:buksam_flutter_practicum/logic/blocs/auth/auth_bloc.dart';
-import 'package:buksam_flutter_practicum/logic/blocs/auth/auth_event.dart';
-import 'package:buksam_flutter_practicum/logic/blocs/auth/auth_state.dart';
-import 'package:buksam_flutter_practicum/logic/blocs/user_bloc/user_bloc.dart';
-import 'package:buksam_flutter_practicum/ui/widgets/global_loading_button.dart';
-import 'package:buksam_flutter_practicum/ui/widgets/tab_box_Widget.dart';
-import 'package:buksam_flutter_practicum/utils/extension/extension.dart';
-import 'package:buksam_flutter_practicum/utils/style/app_text_style.dart';
-import 'package:buksam_flutter_practicum/utils/ui_utils/ui_utils.dart';
+import 'package:exam_5_oy/utils/extension/extension.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../logic/blocs/user_bloc/user_event.dart';
-import '../../widgets/glass_container_widget.dart';
-import '../vedio.dart';
+import '../../blocs/auth/auth_bloc.dart';
+import '../../blocs/auth/auth_event.dart';
+import '../../blocs/auth/auth_state.dart';
+import '../../blocs/user_bloc/user_bloc.dart';
+import '../../blocs/user_bloc/user_event.dart';
+import '../../data/model/forum_status/form_status.dart';
+import '../../data/model/user/user_model.dart';
+import '../../utils/style/app_text_style.dart';
+import '../../utils/ui_utils/ui_utils.dart';
+import '../vedio_screen/glass_screen.dart';
+import '../vedio_screen/vedio_screen.dart';
+import '../widgets/global_button.dart';
+import '../widgets/tab_box.dart';
 import 'login_screen.dart';
-
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
   @override

@@ -32,5 +32,17 @@ class DeleteRecipeEvent extends RecipeEvent with EquatableMixin{
   ];
 }
 
+class UpdateLikesEvent extends RecipeEvent with EquatableMixin {
+  final RetseptModel globalRecipeModel;
+
+  UpdateLikesEvent({required this.globalRecipeModel});
+
+  @override
+  List<Object?> get props => [globalRecipeModel];
+}
+
+
 class GetAllRecipeEvent extends RecipeEvent{}
+
+
 

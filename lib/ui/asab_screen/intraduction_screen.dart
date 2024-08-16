@@ -5,17 +5,16 @@ import 'package:exam_5_oy/ui/widgets/custom_widget.dart';
 import 'package:exam_5_oy/utils/image_path/images_path.dart';
 import 'package:exam_5_oy/utils/style/app_text_style.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:share_plus/share_plus.dart';
 
+import '../../blocs/retsipe_bloc/recipe_event.dart';
 class RecipeCard extends StatefulWidget {
   const RecipeCard({super.key});
-
   @override
   _RecipeCardState createState() => _RecipeCardState();
 }
-
 class _RecipeCardState extends State<RecipeCard> {
   @override
   Widget build(BuildContext context) {
@@ -24,7 +23,6 @@ class _RecipeCardState extends State<RecipeCard> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Recipe Details'),
-
         ),
         body: Column(
           children: [
@@ -65,14 +63,23 @@ class _RecipeCardState extends State<RecipeCard> {
                   child: Row(
                     children: [
                       IconButton(
-                        icon: const Icon(Icons.favorite_border,
-                            color: Colors.white),
-                        onPressed: () {},
+                        icon: Icon(
+                          globalRecipeModel.isLiked ? Icons.favorite : Icons.favorite_border,
+                          color: globalRecipeModel.isLiked ? Colors.red : Colors.white,
+                        ),
+                        onPressed: () {
+                          // Trigger the event to update likes
+                          context.read<RecipeBloc>().add(UpdateLikesEvent(globalRecipeModel: globalRecipeModel));
+                        },
                       ),
                       IconButton(
                         icon: const Icon(Icons.share, color: Colors.white),
-                        onPressed: () {},
+                        onPressed: () {
+                          // Handle the share action
+                          Share.share('Check out this recipe: ${globalRecipeModel.name}');
+                        },
                       ),
+
                     ],
                   ),
                 ),

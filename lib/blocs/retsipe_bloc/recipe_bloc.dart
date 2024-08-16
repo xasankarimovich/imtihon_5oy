@@ -15,6 +15,8 @@ class RecipeBloc extends Bloc<RecipeEvent, RecipeState> {
     on<GetAllRecipeEvent>(_getAllRecipe);
     on<UpdateRecipeEvent>(_updateRecipe);
     on<DeleteRecipeEvent>(_deleteRecipe);
+    on<UpdateLikesEvent>(_updateLikes);
+
   }
 
   Future<void> _insertRecipe(
@@ -22,7 +24,7 @@ class RecipeBloc extends Bloc<RecipeEvent, RecipeState> {
     emit(state.copyWith(status: FormsStatus.loading));
     try {
       final Uri uri = Uri.parse(
-          "https://imtihon-4oy-default-rtdb.europe-west1.firebasedatabase.app/recipe.json");
+          "https://mening-4oy-imtihonim-default-rtdb.europe-west1.firebasedatabase.app/recipe.json");
       debugPrint('___________________-malumot add qilish');
       final Response response = await post(
         uri,
@@ -72,7 +74,7 @@ class RecipeBloc extends Bloc<RecipeEvent, RecipeState> {
     emit(state.copyWith(status: FormsStatus.loading));
     try {
       final Uri uri = Uri.parse(
-          "https://imtihon-4oy-default-rtdb.europe-west1.firebasedatabase.app/recipe/${event.recipeModel.id}.json");
+          "https://mening-4oy-imtihonim-default-rtdb.europe-west1.firebasedatabase.app/recipe/${event.recipeModel.id}.json");
       final Response response = await put(
         uri,
         headers: {"Content-Type": "application/json"},
@@ -127,6 +129,46 @@ class RecipeBloc extends Bloc<RecipeEvent, RecipeState> {
       );
     }
   }
+
+  Future<void> _updateLikes(
+      UpdateLikesEvent event, Emitter<RecipeState> emit) async {
+    emit(state.copyWith(status: FormsStatus.loading));
+    try {
+      final Uri uri = Uri.parse(
+          "https://mening-4oy-imtihonim-default-rtdb.europe-west1.firebasedatabase.app/recipe/${event.globalRecipeModel.isLiked}.json");
+
+      final updatedRecipeModel = event.globalRecipeModel.copyWith(
+        likes: event.globalRecipeModel.likes + 1, // Increment the likes
+        isLiked: !event.globalRecipeModel.isLiked, // Toggle the like status
+      );
+
+      final Response response = await put(
+        uri,
+        headers: {"Content-Type": "application/json"},
+        body: jsonEncode(updatedRecipeModel.toJson()),
+      );
+
+      if (response.statusCode == 200) {
+        add(GetAllRecipeEvent());
+      } else {
+        emit(
+          state.copyWith(
+            status: FormsStatus.error,
+            errorMessage:
+            'Failed to update likes with status code: ${response.statusCode}',
+          ),
+        );
+      }
+    } catch (error) {
+      emit(
+        state.copyWith(
+          status: FormsStatus.error,
+          errorMessage: error.toString(),
+        ),
+      );
+    }
+  }
+
 
   Future<void> _getAllRecipe(
       GetAllRecipeEvent event, Emitter<RecipeState> emit) async {

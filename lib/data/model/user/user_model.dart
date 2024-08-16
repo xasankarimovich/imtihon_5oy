@@ -1,4 +1,4 @@
-import 'package:buksam_flutter_practicum/data/models/user/user_model_constants.dart';
+import 'package:exam_5_oy/data/model/user/user_model_constants.dart';
 
 class UserModel {
   final String uid;

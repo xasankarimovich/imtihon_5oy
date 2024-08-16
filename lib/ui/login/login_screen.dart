@@ -1,23 +1,20 @@
-import 'package:buksam_flutter_practicum/ui/screens/login/register_screen.dart';
-import 'package:buksam_flutter_practicum/utils/extension/extension.dart';
+import 'package:exam_5_oy/ui/login/register_screen.dart';
+import 'package:exam_5_oy/utils/extension/extension.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../data/models/forum_status/form_status.dart';
-import '../../../logic/blocs/auth/auth_bloc.dart';
-import '../../../logic/blocs/auth/auth_event.dart';
-import '../../../logic/blocs/auth/auth_state.dart';
 import '../../../utils/style/app_text_style.dart';
 import '../../../utils/ui_utils/ui_utils.dart';
-import '../../widgets/glass_container_widget.dart';
-import '../../widgets/global_loading_button.dart';
-import '../../widgets/tab_box_Widget.dart';
-import '../vedio.dart';
-
+import '../../blocs/auth/auth_bloc.dart';
+import '../../blocs/auth/auth_event.dart';
+import '../../blocs/auth/auth_state.dart';
+import '../../data/model/forum_status/form_status.dart';
+import '../vedio_screen/glass_screen.dart';
+import '../vedio_screen/vedio_screen.dart';
+import '../widgets/global_button.dart';
+import '../widgets/tab_box.dart';
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
-
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -129,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           Navigator.pushReplacement(
                               context,
                               CupertinoPageRoute(
-                                  builder: (_) => TabBoxScreen()));
+                                  builder: (_) => const TabBoxScreen()));
                         }
                         if (state.status == ForumStatus.error) {
                           showErrorMessage(

@@ -1,27 +1,6 @@
-// // import 'dart:io';
-// // import 'dart:isolate';
-// // import 'package:dio/dio.dart';
-// //
-// // Future<MultipartFile> _getMultipartFile(File file) async {
-// //   final ReceivePort receivePort = ReceivePort();
-// //   await Isolate.spawn(
-// //     _fileToMultipartFile,
-// //     [file.path, receivePort.sendPort],
-// //   );
-// //   return await receivePort.first as MultipartFile;
-// // }
-// //
-// // void _fileToMultipartFile(List<dynamic> args) async {
-// //   final String filePath = args[0];
-// //   final SendPort sendPort = args[1];
-// //   final file = File(filePath);
-// //   final multipartFile = await MultipartFile.fromFile(file.path);
-// //   sendPort.send(multipartFile);
-// // }
-//
+
 //
 // import 'package:dio/dio.dart';
-// import '../model/recipe_model/recipe_about_model.dart';
 // class RecipeServices {
 //   final String _baseUrl =
 //       "https://recipes-acd0d-default-rtdb.firebaseio.com";

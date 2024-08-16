@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
-import 'package:buksam_flutter_practicum/data/models/forum_status/form_status.dart';
-import 'package:buksam_flutter_practicum/data/models/network_response.dart';
-import 'package:buksam_flutter_practicum/data/services/services_locator.dart';
-import '../../../data/services/firebase_auth_service.dart';
+import '../../data/model/forum_status/form_status.dart';
+import '../../data/model/network_response.dart';
+import '../../data/services/firebase_auth_services.dart';
+import '../../data/services/services_locator.dart';
 import 'auth_event.dart';
 import 'auth_state.dart';
 

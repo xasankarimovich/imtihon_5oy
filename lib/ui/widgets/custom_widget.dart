@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 class CustomInputField extends StatelessWidget {
   final String hintText;
 
-  final String? Function(String? value)  validator;
+  final String? Function(String? value) validator;
 
   const CustomInputField({
     super.key,
     required this.hintText,
     required TextEditingController controller,
- required this.validator,
+    required this.validator,
   });
 
   @override
@@ -19,7 +19,6 @@ class CustomInputField extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: TextFormField(
         validator: validator,
-
         decoration: InputDecoration(
           hintText: hintText,
           filled: true,
@@ -36,7 +35,9 @@ class CustomInputField extends StatelessWidget {
 class NameContainer extends StatelessWidget {
   final String title;
 
-  NameContainer({required this.title,});
+  NameContainer({
+    required this.title,
+  });
 
   @override
   Widget build(BuildContext context) {

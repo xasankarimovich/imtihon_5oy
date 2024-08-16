@@ -11,6 +11,7 @@ class RetseptModel {
   final int likes;
   final String image;
   final String video;
+  final bool isLiked;
 
   RetseptModel({
     required this.id,
@@ -25,6 +26,7 @@ class RetseptModel {
     required this.likes,
     required this.image,
     required this.video,
+    required this.isLiked,
   });
 
   // Factory constructor to create an instance from a JSON map
@@ -42,6 +44,7 @@ class RetseptModel {
       likes: json['likes'] as int? ?? 0,
       image: json['image'] ?? '',
       video: json['video'] ?? '',
+      isLiked: json['isLiked'] ?? false,
     );
   }
 
@@ -60,6 +63,7 @@ class RetseptModel {
       'likes': likes,
       'image': image,
       'video': video,
+      'isLiked': isLiked,
     };
   }
 
@@ -76,25 +80,28 @@ class RetseptModel {
         likes: 0,
         image: '',
         video: '',
+        isLiked: false,
       );
 
   RetseptModel copyWith({
-     String? id,
-     String? name,
-     String? category,
-     String? dietaryTarget,
-     String? difficulty,
-     String? preparationTime,
-     List<String>? ingredients,
-     List<String>? preparation,
-     String? description,
-     String? preparer,
-     double? rate,
-     int? likes,
-     String? image,
-     String? video,
-     List<String>? coments,
-}) => RetseptModel(
+    String? id,
+    String? name,
+    String? category,
+    String? dietaryTarget,
+    String? difficulty,
+    String? preparationTime,
+    List<String>? ingredients,
+    List<String>? preparation,
+    String? description,
+    String? preparer,
+    double? rate,
+    int? likes,
+    String? image,
+    String? video,
+    List<String>? coments,
+    bool? isLiked,
+  }) =>
+      RetseptModel(
         id: id ?? this.id,
         name: name ?? this.name,
         category: category ?? this.category,
@@ -107,5 +114,6 @@ class RetseptModel {
         likes: likes ?? this.likes,
         image: image ?? this.image,
         video: video ?? this.video,
+        isLiked: isLiked ?? this.isLiked,
       );
 }

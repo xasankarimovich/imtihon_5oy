@@ -11,6 +11,7 @@ class AppImages {
   static const String onChoco6 = 'assets/profile_images/choco6.png';
   static const String onChoco7 = 'assets/profile_images/choco7.png';
   static const String onChoco8 = 'assets/profile_images/choco8.png';
+  static const String onVideo = 'assets/book.mp4';
   static const String defaultRecipe = 'assets/images/default.png';
 
 }

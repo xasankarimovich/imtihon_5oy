@@ -1,12 +1,10 @@
-import 'package:buksam_flutter_practicum/logic/blocs/user_bloc/user_state.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:exam_5_oy/blocs/user_bloc/user_state.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../data/models/forum_status/form_status.dart';
-import '../../../data/models/user/user_model.dart';
+import '../../data/model/forum_status/form_status.dart';
+import '../../data/model/user/user_model.dart';
 import 'user_event.dart';
-
 class UserBloc extends Bloc<UserEvent, UserState> {
   UserBloc() : super(UserState.initialValue()) {
     on<InsertUserEvent>(_onInsertUser);

@@ -206,11 +206,12 @@ class _AddNewScreenState extends State<AddNewScreen> {
 
                     if (_formKey.currentState!.validate()) {
                       setState(() {
-                         globalRecipeModel = globalRecipeModel.copyWith(
+                        globalRecipeModel = globalRecipeModel.copyWith(
                           name: _nameController.text,
                           difficulty: globalDifficulty,
                           preparationTime: _cookTimeHourController.text,
                           image: imgUrl ?? '',
+
                         );
                         context.read<RecipeBloc>().add(
                               InsertRecipeEvent(

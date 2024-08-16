@@ -1,5 +1,5 @@
-import '../../../data/models/forum_status/form_status.dart';
-import '../../../data/models/user/user_model.dart';
+import '../../data/model/forum_status/form_status.dart';
+import '../../data/model/user/user_model.dart';
 
 class UserState {
   final String errorMessage;
